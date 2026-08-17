@@ -22,7 +22,10 @@ const jost = Jost({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ingefrancois.com";
+// `||` (not `??`) deliberately — an empty-string env var (e.g. a platform
+// auto-detecting the key from .env.example with no value set) must also
+// fall back, not just an unset/undefined one.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.ingefrancois.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
