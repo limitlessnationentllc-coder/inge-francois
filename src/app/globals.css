@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
+/* ============================================================
+   INGÉ SIGNATURE — design tokens
+   Dark Cherry Noir × Parisian Editorial × Executive Luxury × Private Society
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary */
+  --inge-noir: #0b0908;
+  --inge-noir-deep: #050403;
+  --inge-cherry: #4a0e1a;
+  --inge-cherry-deep: #2e0810;
+  --inge-cherry-bright: #6e1424;
+  --inge-oxblood: #5c1220;
+  --inge-burgundy: #7a1b2c;
+
+  /* Secondary */
+  --inge-ivory: #f3eae0;
+  --inge-ivory-dim: #dcd0c0;
+  --inge-charcoal: #201c1b;
+  --inge-charcoal-light: #2a2523;
+  --inge-chocolate: #2b1b14;
+  --inge-smoke: #8d8480;
+
+  /* Accent — champagne gold, used sparingly */
+  --inge-gold: #c7a768;
+  --inge-gold-soft: #e4d3ad;
+  --inge-gold-dim: #8d7645;
+
+  /* Semantic aliases */
+  --background: var(--inge-noir);
+  --foreground: var(--inge-ivory);
+
+  /* Motion timing */
+  --ease-house: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-drip: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
+  --color-noir: var(--inge-noir);
+  --color-noir-deep: var(--inge-noir-deep);
+  --color-cherry: var(--inge-cherry);
+  --color-cherry-deep: var(--inge-cherry-deep);
+  --color-cherry-bright: var(--inge-cherry-bright);
+  --color-oxblood: var(--inge-oxblood);
+  --color-burgundy: var(--inge-burgundy);
+
+  --color-ivory: var(--inge-ivory);
+  --color-ivory-dim: var(--inge-ivory-dim);
+  --color-charcoal: var(--inge-charcoal);
+  --color-charcoal-light: var(--inge-charcoal-light);
+  --color-chocolate: var(--inge-chocolate);
+  --color-smoke: var(--inge-smoke);
+
+  --color-gold: var(--inge-gold);
+  --color-gold-soft: var(--inge-gold-soft);
+  --color-gold-dim: var(--inge-gold-dim);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-jost);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--inge-noir);
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--inge-cherry);
+  color: var(--inge-ivory);
+}
+
+/* Restrained, on-brand scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--inge-noir);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--inge-cherry-deep);
+  border: 2px solid var(--inge-noir);
+  border-radius: 999px;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.tracking-house {
+  letter-spacing: 0.28em;
+}
+
+/* Utility for character/word split reveal targets */
+.split-line {
+  overflow: hidden;
+  display: block;
+}
+.split-char,
+.split-word {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Clip-path editorial reveal utility (JS toggles data-revealed) */
+.reveal-clip {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.1s var(--ease-house);
+}
+.reveal-clip[data-revealed="true"] {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* Drip / gloss shared gradient */
+.gloss-cherry {
+  background: linear-gradient(
+    160deg,
+    var(--inge-cherry-bright) 0%,
+    var(--inge-cherry) 42%,
+    var(--inge-cherry-deep) 78%,
+    var(--inge-noir-deep) 100%
+  );
+}
+
+/* Reduced motion: strip nonessential animation/transition globally,
+   individual components still provide explicit static fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-clip {
+    clip-path: inset(0 0 0% 0) !important;
+  }
+}
+
+/* Focus visibility — accessible, on-brand */
+:focus-visible {
+  outline: 1.5px solid var(--inge-gold);
+  outline-offset: 3px;
 }
