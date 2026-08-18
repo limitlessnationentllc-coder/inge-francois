@@ -45,7 +45,7 @@ export function ConciergeForm({ prefillPiece }: { prefillPiece?: string }) {
       <div className="border border-gold-dim/50 px-8 py-10 text-center">
         <p className="font-display text-2xl italic text-ivory">Your request has been received.</p>
         <p className="mt-3 font-sans text-sm text-ivory-dim">
-          An INGÉ Concierge specialist will reach out personally within one business day.
+          An <span className="wordmark-caps">INGÉ</span> Concierge specialist will reach out personally within one business day.
         </p>
       </div>
     );

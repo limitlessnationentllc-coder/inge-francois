@@ -12,7 +12,7 @@ export function CartView() {
   const shopifyLive = isShopifyConfigured();
 
   return (
-    <div className="mx-auto min-h-[70vh] max-w-4xl px-5 pb-24 pt-32 md:px-8 md:pt-40">
+    <div className="mx-auto min-h-[70vh] max-w-4xl px-5 pb-24 pt-[10.25rem] md:px-8 md:pt-[12.25rem]">
       <h1 className="font-display text-3xl italic text-ivory sm:text-4xl">Your Bag</h1>
 
       {lines.length === 0 ? (

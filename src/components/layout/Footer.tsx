@@ -12,10 +12,10 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-2.5">
             <CherryEmblem size={28} variant="line" className="text-gold" />
-            <span className="font-display text-2xl tracking-house text-ivory">INGÉ</span>
+            <span className="wordmark-caps font-display text-2xl tracking-house text-ivory">Ingé</span>
           </Link>
           <p className="mt-4 max-w-xs font-sans text-sm leading-relaxed text-smoke">
-            A private luxury house. Curated. Intentional. Exclusively INGÉ.
+            A private luxury house. Curated. Intentional. Exclusively <span className="wordmark-caps">INGÉ</span>.
           </p>
           <p className="mt-6 font-sans text-[11px] uppercase tracking-house text-smoke">IngeFrancois.com</p>
         </div>
@@ -37,7 +37,7 @@ export function Footer() {
           <h3 className="font-sans text-[11px] uppercase tracking-house text-gold-soft">Client Services</h3>
           <ul className="mt-4 flex flex-col gap-2.5 font-sans text-sm text-ivory/80">
             <li>
-              <Link href="/concierge" className="transition hover:text-gold">
+              <Link href="/concierge" className="wordmark-caps transition hover:text-gold">
                 INGÉ Concierge
               </Link>
             </li>
@@ -79,7 +79,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-14 flex max-w-[1600px] flex-col gap-3 border-t border-ivory/10 pt-6 font-sans text-[11px] text-smoke md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} INGÉ FRANÇOIS. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} <span className="wordmark-caps">INGÉ</span> FRANÇOIS. All rights reserved.</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link href="/the-house" className="hover:text-gold">
             The House

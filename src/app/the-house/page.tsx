@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function TheHousePage() {
   return (
-    <div className="bg-noir pt-16 md:pt-20">
+    <div className="bg-noir pt-[6.25rem] md:pt-[7.25rem]">
       <section className="flex min-h-[60vh] flex-col items-center justify-center gap-6 gloss-cherry px-6 py-24 text-center">
         <Reveal className="flex flex-col items-center gap-6">
           <CherryEmblem variant="gloss" size={64} />
@@ -23,7 +23,7 @@ export default function TheHousePage() {
       <section className="mx-auto max-w-3xl px-6 py-20 font-sans text-base leading-relaxed text-ivory-dim">
         <Reveal className="flex flex-col gap-6">
           <p>
-            INGÉ FRANÇOIS began with a single conviction: that luxury shouldn&apos;t be shouted, it should be selected.
+            <span className="wordmark-caps">INGÉ</span> FRANÇOIS began with a single conviction: that luxury shouldn&apos;t be shouted, it should be selected.
             Not everything. Not everyone. The right pieces, for the people who already command a room and simply need
             their wardrobe to keep pace.
           </p>
@@ -33,10 +33,11 @@ export default function TheHousePage() {
             personal stylist, not a department store.
           </p>
           <p>
-            What sits alongside the curation is something we&apos;re building slowly and deliberately: INGÉ Originals,
+            What sits alongside the curation is something we&apos;re building slowly and deliberately:{" "}
+            <span className="wordmark-caps">INGÉ</span> Originals,
             the house&apos;s own proprietary designs. A first collection, small on purpose. The beginning of a fashion
             house that speaks entirely in its own voice — the same black-cherry, oxblood-lacquer language that opens
-            every visit to INGÉ.
+            every visit to <span className="wordmark-caps">INGÉ</span>.
           </p>
           <p>
             The house is still being built. What it becomes — beyond fashion, beyond this first collection — will
@@ -64,7 +65,7 @@ export default function TheHousePage() {
 
       <section className="flex flex-col items-center gap-6 px-6 py-24 text-center">
         <Reveal className="flex flex-col items-center gap-6">
-          <p className="font-display text-2xl italic text-ivory sm:text-3xl">Curated. Intentional. Exclusively INGÉ.</p>
+          <p className="font-display text-2xl italic text-ivory sm:text-3xl">Curated. Intentional. Exclusively <span className="wordmark-caps">INGÉ</span>.</p>
           <Link href="/concierge" className="border border-gold px-8 py-3.5 font-sans text-xs uppercase tracking-house text-gold transition hover:bg-gold hover:text-noir">
             Speak With Concierge
           </Link>

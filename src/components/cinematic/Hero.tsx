@@ -59,7 +59,7 @@ function StaticHero() {
         <br />
         Before you say a word.
       </h1>
-      <p className="max-w-md font-sans text-sm text-ivory-dim">A new expression of modern luxury. Curated. Intentional. Exclusively INGÉ.</p>
+      <p className="max-w-md font-sans text-sm text-ivory-dim">A new expression of modern luxury. Curated. Intentional. Exclusively <span className="wordmark-caps">INGÉ</span>.</p>
       <a
         href="#house"
         className="mt-4 border border-gold px-10 py-4 font-sans text-xs uppercase tracking-house text-gold transition hover:bg-gold hover:text-noir"
@@ -218,7 +218,7 @@ function CinematicHero() {
         {/* Final scene — doors + wordmark + CTA */}
         <div ref={finaleRef} className="absolute inset-0 flex items-center justify-center gloss-cherry">
           <div className="flex flex-col items-center gap-6 px-6 text-center">
-            <div className="flex overflow-hidden font-display text-6xl italic tracking-house text-ivory sm:text-8xl" aria-label="INGÉ">
+            <div className="wordmark-caps flex overflow-hidden font-display text-6xl italic tracking-house text-ivory sm:text-8xl" aria-label="INGÉ">
               {"INGÉ".split("").map((c, i) => (
                 <span key={i} className="inline-block overflow-hidden">
                   <span ref={(el) => { charRefs.current[i] = el; }} className="inline-block">
@@ -237,9 +237,12 @@ function CinematicHero() {
           </div>
         </div>
 
-        {/* Door leaves */}
-        <div ref={doorLeftRef} className="absolute inset-y-0 left-0 z-10 w-1/2 bg-noir-deep" />
-        <div ref={doorRightRef} className="absolute inset-y-0 right-0 z-10 w-1/2 bg-noir-deep" />
+        {/* Door leaves — default off-screen via CSS so a failed/late GSAP
+            init on a real device never leaves them covering the hero in
+            solid black; gsap.set()/tweens layer inline transforms on top
+            once JS runs successfully. */}
+        <div ref={doorLeftRef} className="absolute inset-y-0 left-0 z-10 w-1/2 -translate-x-full bg-noir-deep" />
+        <div ref={doorRightRef} className="absolute inset-y-0 right-0 z-10 w-1/2 translate-x-full bg-noir-deep" />
       </div>
     </section>
   );

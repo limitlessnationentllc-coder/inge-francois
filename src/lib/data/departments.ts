@@ -9,8 +9,8 @@ export const DEPARTMENTS: Department[] = [
   {
     slug: "la-femme",
     number: "01",
-    frenchName: "La Femme",
-    englishName: "Womenswear",
+    frenchName: "Womenswear",
+    englishName: "La Femme",
     tagline: "Tailoring for the room you already command.",
     description:
       "Suits, blazers, skirts, and dresses built for the executive, the founder, the woman whose calendar has no soft edges. Structured where it matters, fluid where it counts.",
@@ -18,8 +18,8 @@ export const DEPARTMENTS: Department[] = [
   {
     slug: "l-homme",
     number: "02",
-    frenchName: "L'Homme",
-    englishName: "Menswear",
+    frenchName: "Menswear",
+    englishName: "L'Homme",
     tagline: "Quiet authority, precisely cut.",
     description:
       "A tightly edited menswear selection — tailoring, outerwear, and considered essentials for men who dress with intent rather than noise.",
@@ -27,17 +27,17 @@ export const DEPARTMENTS: Department[] = [
   {
     slug: "les-sacs",
     number: "03",
-    frenchName: "Les Sacs",
-    englishName: "Handbags",
+    frenchName: "Handbags",
+    englishName: "Les Sacs",
     tagline: "The object that enters the room first.",
     description:
-      "Handbags, pocketbooks, and clutches sourced and designed for permanence — pieces built to be carried for decades, not seasons.",
+      "Handbags, pocketbooks, and clutches sourced and designed for permanence — new and pre-loved alike, each one authenticated and carried for decades, not seasons.",
   },
   {
     slug: "les-souliers",
     number: "04",
-    frenchName: "Les Souliers",
-    englishName: "Shoes",
+    frenchName: "Shoes",
+    englishName: "Les Souliers",
     tagline: "Every step, considered.",
     description:
       "Designer footwear selected for the woman and man who stand, walk, and lead all day — without ever appearing to try.",
@@ -45,8 +45,8 @@ export const DEPARTMENTS: Department[] = [
   {
     slug: "les-bijoux",
     number: "05",
-    frenchName: "Les Bijoux",
-    englishName: "Jewelry & Accessories",
+    frenchName: "Jewelry & Accessories",
+    englishName: "Les Bijoux",
     tagline: "Small pieces, unmistakable presence.",
     description:
       "Fine and demi-fine jewelry, and the accessories that finish a look without announcing themselves.",
@@ -54,8 +54,8 @@ export const DEPARTMENTS: Department[] = [
   {
     slug: "maison",
     number: "07",
-    frenchName: "Maison",
-    englishName: "Beauty & Home",
+    frenchName: "Beauty & Home",
+    englishName: "Maison",
     tagline: "The house, beyond the wardrobe.",
     description:
       "A curated edit of beauty and lifestyle objects — the first expression of INGÉ beyond fashion, chosen with the same restraint as everything else.",

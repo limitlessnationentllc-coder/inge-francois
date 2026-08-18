@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { CherryEmblem } from "@/components/cinematic/CherryEmblem";
+import { HeartEmblem } from "@/components/cinematic/HeartEmblem";
 import { NAV_ITEMS } from "@/lib/data/nav";
 import { useCart } from "./CartProvider";
 import { cn } from "@/lib/utils/cn";
@@ -50,47 +51,56 @@ export function Nav() {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
-          scrolled || menuOpen ? "bg-noir/90 backdrop-blur-md" : "bg-transparent"
-        )}
-      >
-        <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 md:h-20 md:px-8">
-          <button
-            type="button"
-            onClick={() => setMenuOpen((v) => !v)}
-            className="flex items-center gap-3 text-ivory/90 transition hover:text-gold"
-            aria-expanded={menuOpen}
-            aria-controls="inge-nav-overlay"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-          >
-            <span className="flex h-4 w-6 flex-col justify-between">
-              <span className={cn("h-px w-full bg-current transition-transform", menuOpen && "translate-y-[7px] rotate-45")} />
-              <span className={cn("h-px w-full bg-current transition-opacity", menuOpen && "opacity-0")} />
-              <span className={cn("h-px w-full bg-current transition-transform", menuOpen && "-translate-y-[7px] -rotate-45")} />
-            </span>
-            <span className="hidden font-sans text-[11px] uppercase tracking-house text-inherit sm:inline">Menu</span>
-          </button>
+      <header className="fixed inset-x-0 top-0 z-50">
+        {/* House bar — always solid black, carries the personal mark and name */}
+        <div className="flex h-9 items-center justify-center gap-2 bg-noir-deep px-4">
+          <HeartEmblem size={18} className="shrink-0" />
+          <span className="wordmark-caps font-display text-sm tracking-house text-gold">Ingé</span>
+          <span className="hidden font-sans text-[10px] tracking-wide text-gold-dim sm:inline">— pronounced INGÈ</span>
+        </div>
 
-          <Link href="/" className="flex items-center gap-2.5" aria-label="INGÉ FRANÇOIS — home">
-            <CherryEmblem size={26} variant="line" className="text-gold" />
-            <span className="font-display text-xl tracking-house text-ivory md:text-2xl">INGÉ</span>
-          </Link>
-
-          <div className="flex items-center gap-4 md:gap-5">
-            <SearchControl open={searchOpen} setOpen={setSearchOpen} />
-            <Link href="/account" aria-label="Account" className="text-ivory/90 transition hover:text-gold">
-              <UserIcon />
-            </Link>
-            <button type="button" onClick={toggleCart} aria-label={`Shopping bag, ${totalCount} item${totalCount === 1 ? "" : "s"}`} className="relative text-ivory/90 transition hover:text-gold">
-              <BagIcon />
-              {totalCount > 0 && (
-                <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[9px] font-medium text-noir">
-                  {totalCount}
-                </span>
-              )}
+        <div
+          className={cn(
+            "transition-colors duration-500",
+            scrolled || menuOpen ? "bg-noir/90 backdrop-blur-md" : "bg-transparent"
+          )}
+        >
+          <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 md:h-20 md:px-8">
+            <button
+              type="button"
+              onClick={() => setMenuOpen((v) => !v)}
+              className="flex items-center gap-3 text-ivory/90 transition hover:text-gold"
+              aria-expanded={menuOpen}
+              aria-controls="inge-nav-overlay"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              <span className="flex h-4 w-6 flex-col justify-between">
+                <span className={cn("h-px w-full bg-current transition-transform", menuOpen && "translate-y-[7px] rotate-45")} />
+                <span className={cn("h-px w-full bg-current transition-opacity", menuOpen && "opacity-0")} />
+                <span className={cn("h-px w-full bg-current transition-transform", menuOpen && "-translate-y-[7px] -rotate-45")} />
+              </span>
+              <span className="hidden font-sans text-[11px] uppercase tracking-house text-inherit sm:inline">Menu</span>
             </button>
+
+            <Link href="/" className="flex items-center gap-2.5" aria-label="Ingé François — home">
+              <CherryEmblem size={26} variant="line" className="text-gold" />
+              <span className="wordmark-caps font-display text-xl tracking-house text-ivory md:text-2xl">Ingé</span>
+            </Link>
+
+            <div className="flex items-center gap-4 md:gap-5">
+              <SearchControl open={searchOpen} setOpen={setSearchOpen} />
+              <Link href="/account" aria-label="Account" className="text-ivory/90 transition hover:text-gold">
+                <UserIcon />
+              </Link>
+              <button type="button" onClick={toggleCart} aria-label={`Shopping bag, ${totalCount} item${totalCount === 1 ? "" : "s"}`} className="relative text-ivory/90 transition hover:text-gold">
+                <BagIcon />
+                {totalCount > 0 && (
+                  <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[9px] font-medium text-noir">
+                    {totalCount}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -128,7 +138,7 @@ function NavOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
         <span>IngeFrancois.com</span>
         <span>@IngeFrancois</span>
         <Link href="/private-clientele" onClick={onClose} className="text-gold-soft hover:text-gold">
-          INGÉ Private Clientele — Apply for Access
+          <span className="wordmark-caps">INGÉ</span> Private Clientele — Apply for Access
         </Link>
       </div>
     </div>

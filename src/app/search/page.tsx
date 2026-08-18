@@ -14,7 +14,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
   const products = q ? await searchProducts(q) : [];
 
   return (
-    <div className="min-h-[70vh] bg-noir px-5 pb-24 pt-32 md:px-10 md:pt-40 lg:px-16">
+    <div className="min-h-[70vh] bg-noir px-5 pb-24 pt-[10.25rem] md:px-10 md:pt-[12.25rem] lg:px-16">
       <Reveal className="mb-12">
         <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">Search</span>
         <h1 className="mt-2 font-display text-3xl italic text-ivory sm:text-4xl">
@@ -25,7 +25,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
       {q && products.length === 0 && (
         <p className="font-sans text-sm text-smoke">
           Nothing matched “{q}” in the current catalog. For rare or hard-to-find pieces, try{" "}
-          <a href="/concierge" className="text-gold underline underline-offset-4">
+          <a href="/concierge" className="wordmark-caps text-gold underline underline-offset-4">
             INGÉ Concierge
           </a>
           .

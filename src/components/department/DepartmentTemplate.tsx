@@ -9,7 +9,7 @@ export function DepartmentTemplate({ department, products }: { department: Depar
   const hasConciergeOnly = products.some((p) => p.commerceMode === "concierge-only");
 
   return (
-    <div className="bg-noir pt-16 md:pt-20">
+    <div className="bg-noir pt-[6.25rem] md:pt-[7.25rem]">
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <PlaceholderPlate
           seed={`dept-hero-${department.slug}`}
@@ -29,7 +29,7 @@ export function DepartmentTemplate({ department, products }: { department: Depar
 
       {hasDemo && (
         <div className="border-y border-gold-dim/40 bg-chocolate/50 px-5 py-3 text-center font-sans text-xs uppercase tracking-wide text-gold-soft md:px-10">
-          Demo Content — placeholder catalog. Real INGÉ inventory connects here once the Shopify store is live.
+          Demo Content — placeholder catalog. Real <span className="wordmark-caps">INGÉ</span> inventory connects here once the Shopify store is live.
         </div>
       )}
 
@@ -54,7 +54,7 @@ export function DepartmentTemplate({ department, products }: { department: Depar
           <Reveal className="mx-auto max-w-xl">
             <h2 className="font-display text-2xl italic text-ivory">Some pieces in this room are available by request only.</h2>
             <p className="mt-3 font-sans text-sm text-ivory-dim">
-              Rare and privately sourced inventory is offered through INGÉ Concierge, one client at a time.
+              Rare and privately sourced inventory is offered through <span className="wordmark-caps">INGÉ</span> Concierge, one client at a time.
             </p>
             <Link
               href="/concierge"

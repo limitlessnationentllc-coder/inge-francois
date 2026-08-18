@@ -115,6 +115,7 @@ const KNOWN_LABELS: ProductLabel[] = [
   "Private Client",
   "One of One",
   "INGÉ Originals",
+  "Pre-Loved",
 ];
 
 function labelsFromTags(tags: string[]): ProductLabel[] {

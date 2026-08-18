@@ -6,12 +6,12 @@ export interface NavItem {
 /** The restrained top-level navigation, per brand brief. */
 export const NAV_ITEMS: NavItem[] = [
   { label: "New", href: "/new" },
-  { label: "La Femme", href: "/la-femme" },
-  { label: "L'Homme", href: "/l-homme" },
-  { label: "Les Sacs", href: "/les-sacs" },
-  { label: "Les Souliers", href: "/les-souliers" },
-  { label: "Les Bijoux", href: "/les-bijoux" },
-  { label: "Maison", href: "/maison" },
+  { label: "Womenswear", href: "/la-femme" },
+  { label: "Menswear", href: "/l-homme" },
+  { label: "Handbags", href: "/les-sacs" },
+  { label: "Shoes", href: "/les-souliers" },
+  { label: "Jewelry & Accessories", href: "/les-bijoux" },
+  { label: "Beauty & Home", href: "/maison" },
   { label: "INGÉ Originals", href: "/originals" },
   { label: "Private Collection", href: "/private-collection" },
   { label: "Concierge", href: "/concierge" },

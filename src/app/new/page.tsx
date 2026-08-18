@@ -9,7 +9,7 @@ export default async function NewArrivalsPage() {
   const products = await getNewProducts();
 
   return (
-    <div className="bg-noir px-5 pb-24 pt-32 md:px-10 md:pt-40 lg:px-16">
+    <div className="bg-noir px-5 pb-24 pt-[10.25rem] md:px-10 md:pt-[12.25rem] lg:px-16">
       <Reveal className="mb-12">
         <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">Just Entered the House</span>
         <h1 className="mt-2 font-display text-4xl italic text-ivory sm:text-5xl">New</h1>

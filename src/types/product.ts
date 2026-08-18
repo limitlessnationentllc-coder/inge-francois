@@ -25,7 +25,8 @@ export type ProductLabel =
   | "Available by Request"
   | "Private Client"
   | "One of One"
-  | "INGÉ Originals";
+  | "INGÉ Originals"
+  | "Pre-Loved";
 
 export type CommerceMode = "bag" | "request" | "concierge-only";
 

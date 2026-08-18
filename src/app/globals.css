@@ -112,6 +112,16 @@ body {
   letter-spacing: 0.28em;
 }
 
+/* House wordmark — true small-caps (not just typed uppercase). Source text
+   should be title case ("Ingé"); this renders it as uniform small capitals
+   via the font's OpenType small-caps feature (browsers synthesize it if the
+   font has none). */
+.wordmark-caps {
+  font-variant-caps: all-small-caps;
+  -webkit-font-feature-settings: "smcp", "c2sc";
+  font-feature-settings: "smcp", "c2sc";
+}
+
 /* Utility for character/word split reveal targets */
 .split-line {
   overflow: hidden;

@@ -27,11 +27,11 @@ export default async function ConciergePage({ searchParams }: PageProps) {
   const { piece } = await searchParams;
 
   return (
-    <div className="bg-noir pt-16 md:pt-20">
+    <div className="bg-noir pt-[6.25rem] md:pt-[7.25rem]">
       <section className="flex min-h-[55vh] flex-col items-center justify-center gap-6 gloss-cherry px-6 py-24 text-center">
         <Reveal className="flex flex-col items-center gap-6">
           <CherryEmblem variant="gloss" size={64} />
-          <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Concierge</span>
+          <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Concierge</span>
           <h1 className="max-w-2xl font-display text-4xl italic text-ivory sm:text-6xl">Luxury, personally considered.</h1>
           <p className="max-w-md font-sans text-sm text-ivory-dim">
             For clients who want more than a storefront — a private point of contact inside the house.
@@ -51,7 +51,8 @@ export default async function ConciergePage({ searchParams }: PageProps) {
             ))}
           </ul>
           <p className="mt-8 font-sans text-sm text-ivory-dim">
-            Rare and privately sourced inventory across the house — Private Collection pieces, INGÉ Originals limited
+            Rare and privately sourced inventory across the house — Private Collection pieces,{" "}
+            <span className="wordmark-caps">INGÉ</span> Originals limited
             runs, and anything marked <em className="text-gold-soft not-italic">Available by Request</em> — is offered
             exclusively through Concierge.
           </p>

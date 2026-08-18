@@ -26,7 +26,7 @@ export function WaitlistForm() {
     return (
       <div className="border border-gold-dim/50 px-8 py-10 text-center">
         <p className="font-display text-2xl italic text-ivory">Your application has been received.</p>
-        <p className="mt-3 font-sans text-sm text-ivory-dim">INGÉ Private Clientele reviews applications personally.</p>
+        <p className="mt-3 font-sans text-sm text-ivory-dim"><span className="wordmark-caps">INGÉ</span> Private Clientele reviews applications personally.</p>
       </div>
     );
   }
@@ -47,7 +47,7 @@ export function WaitlistForm() {
       </div>
       <div>
         <label htmlFor="note" className="font-sans text-[11px] uppercase tracking-house text-smoke">
-          What draws you to INGÉ? (Optional)
+          What draws you to <span className="wordmark-caps">INGÉ</span>? (Optional)
         </label>
         <textarea id="note" name="note" rows={3} className="mt-2 w-full resize-none border-b border-ivory/25 bg-transparent py-3 font-sans text-ivory outline-none focus:border-gold" />
       </div>

@@ -71,7 +71,7 @@ export function ProductActions({ product }: { product: Product }) {
             href={conciergePrefill}
             className="w-full py-3 text-center font-sans text-xs uppercase tracking-house text-ivory-dim underline underline-offset-4 transition hover:text-gold"
           >
-            Speak With INGÉ Concierge
+            Speak With <span className="wordmark-caps">INGÉ</span> Concierge
           </Link>
         )}
       </div>

@@ -10,7 +10,7 @@ export function ProductDetail({ product }: { product: Product }) {
   const department = getDepartment(product.department);
 
   return (
-    <div className="bg-noir pt-16 md:pt-20">
+    <div className="bg-noir pt-[6.25rem] md:pt-[7.25rem]">
       <nav aria-label="Breadcrumb" className="px-5 pt-6 font-sans text-[11px] uppercase tracking-wide text-smoke md:px-10 lg:px-16">
         <Link href={`/${department.slug}`} className="hover:text-gold">
           {department.frenchName}

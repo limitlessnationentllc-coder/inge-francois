@@ -24,7 +24,7 @@ export function IntroLine() {
         <h2 className="max-w-3xl font-display text-3xl italic leading-snug text-ivory sm:text-5xl">
           A new expression of modern luxury.
           <br />
-          Curated. Intentional. Exclusively INGÉ.
+          Curated. Intentional. Exclusively <span className="wordmark-caps">INGÉ</span>.
         </h2>
       </Reveal>
     </section>
@@ -111,7 +111,7 @@ export function ConciergeTeaser() {
         <div className="h-full w-full gloss-cherry" aria-hidden />
       </Reveal>
       <Reveal className="flex flex-col items-start gap-6 px-8 py-20 md:px-16">
-        <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Concierge</span>
+        <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Concierge</span>
         <h2 className="font-display text-3xl italic text-ivory sm:text-4xl">Luxury, personally considered.</h2>
         <p className="max-w-md font-sans text-sm text-ivory-dim">
           Personal styling, executive wardrobe consultation, designer sourcing, and private appointments — for clients who
@@ -132,17 +132,17 @@ export function OriginalsTeaser() {
   return (
     <section className="grid grid-cols-1 items-center bg-charcoal md:grid-cols-2">
       <Reveal className="order-2 flex flex-col items-start gap-6 px-8 py-20 md:order-1 md:px-16">
-        <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Originals</span>
+        <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Originals</span>
         <h2 className="font-display text-3xl italic text-ivory sm:text-4xl">Where the house begins to speak for itself.</h2>
         <p className="max-w-md font-sans text-sm text-ivory-dim">
-          Proprietary INGÉ designs — the first pieces conceived, not merely curated. A small collection today; the
+          Proprietary <span className="wordmark-caps">INGÉ</span> designs — the first pieces conceived, not merely curated. A small collection today; the
           foundation of an original fashion house tomorrow.
         </p>
         <Link
           href="/originals"
           className="border border-gold px-8 py-3.5 font-sans text-xs uppercase tracking-house text-gold transition hover:bg-gold hover:text-noir"
         >
-          Discover INGÉ Originals
+          Discover <span className="wordmark-caps">INGÉ</span> Originals
         </Link>
       </Reveal>
       <Reveal className="relative order-1 aspect-[4/3] md:order-2 md:aspect-auto md:h-full">
@@ -161,7 +161,7 @@ export function HouseStoryTeaser() {
           Built like a house. Curated like a wardrobe.
         </h2>
         <p className="max-w-lg font-sans text-sm text-ivory-dim">
-          INGÉ FRANÇOIS began as a private boutique — a single point of view on what luxury should feel like for the people
+          <span className="wordmark-caps">INGÉ</span> FRANÇOIS began as a private boutique — a single point of view on what luxury should feel like for the people
           who already command a room. What comes next is being built the same way: deliberately.
         </p>
         <Link href="/the-house" className="font-sans text-xs uppercase tracking-house text-gold underline underline-offset-8 hover:text-gold-soft">
@@ -177,7 +177,7 @@ export function PrivateClientInvitation() {
     <section className="flex flex-col items-center gap-8 border-t border-ivory/10 bg-noir-deep px-6 py-28 text-center">
       <Reveal className="flex flex-col items-center gap-6">
         <CherryEmblem variant="gloss" size={56} />
-        <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Private Clientele</span>
+        <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Private Clientele</span>
         <h2 className="max-w-xl font-display text-3xl italic text-ivory sm:text-4xl">Before anyone else.</h2>
         <p className="max-w-md font-sans text-sm text-ivory-dim">
           Early access, private drops, sourcing, and styling appointments — reserved for the house&apos;s private clientele.
