@@ -6,6 +6,7 @@ import { CherryEmblem } from "@/components/cinematic/CherryEmblem";
 export const metadata: Metadata = {
   title: "INGÉ Concierge",
   description: "Personal styling, executive wardrobe consultation, designer sourcing, and private appointments.",
+  alternates: { canonical: "/concierge" },
 };
 
 const SERVICES = [

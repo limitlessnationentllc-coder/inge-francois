@@ -18,6 +18,7 @@ export function Footer() {
             A private luxury house. Curated. Intentional. Exclusively <span className="wordmark-caps">INGÉ</span>.
           </p>
           <p className="mt-6 font-sans text-[11px] uppercase tracking-house text-smoke">IngeFrancois.com</p>
+          <p className="mt-2 font-sans text-[11px] uppercase tracking-house text-smoke">Stockbridge, GA — Serving Henry County &amp; South Metro Atlanta</p>
         </div>
 
         <nav aria-label="Departments">

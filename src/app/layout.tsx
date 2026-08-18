@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Jost } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
@@ -34,23 +34,51 @@ export const metadata: Metadata = {
     template: "%s | INGÉ",
   },
   description:
-    "INGÉ FRANÇOIS is a private luxury boutique — curated designer fashion, handbags, shoes, jewelry, and original INGÉ designs. Enter the house.",
+    "INGÉ FRANÇOIS is a private luxury boutique based in Stockbridge, GA, serving Henry County and the south metro Atlanta area — curated designer fashion, handbags, shoes, jewelry, pre-loved pieces, and original INGÉ designs.",
   openGraph: {
     title: "INGÉ — A House of Modern Luxury",
-    description: "Curated. Intentional. Exclusively INGÉ.",
+    description: "Curated. Intentional. Exclusively INGÉ. A private luxury boutique in Stockbridge, GA.",
     url: siteUrl,
     siteName: "INGÉ FRANÇOIS",
     type: "website",
   },
   icons: {
     icon: "/favicon.svg",
+    apple: "/apple-icon",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0b0908",
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  name: "INGÉ FRANÇOIS",
+  alternateName: "INGÉ",
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
+  description:
+    "INGÉ FRANÇOIS is a private luxury boutique — curated designer fashion, handbags, shoes, jewelry, and pre-loved pieces, alongside original INGÉ designs.",
+  areaServed: [
+    { "@type": "City", name: "Stockbridge, GA" },
+    { "@type": "AdministrativeArea", name: "Henry County, GA" },
+    { "@type": "Place", name: "South Metro Atlanta" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${jost.variable}`}>
       <body className="bg-noir text-ivory">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <CartProvider>
           <SmoothScroll>
             <Nav />

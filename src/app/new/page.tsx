@@ -3,7 +3,7 @@ import { getNewProducts } from "@/lib/shopify";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Reveal } from "@/components/cinematic/Reveal";
 
-export const metadata: Metadata = { title: "New" };
+export const metadata: Metadata = { title: "New", alternates: { canonical: "/new" } };
 
 export default async function NewArrivalsPage() {
   const products = await getNewProducts();

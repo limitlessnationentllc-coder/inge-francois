@@ -6,7 +6,9 @@ import { DEPARTMENTS } from "@/lib/data/departments";
 
 export const metadata: Metadata = {
   title: "The House",
-  description: "The story of INGÉ FRANÇOIS — a private luxury house, curated with intent.",
+  description:
+    "The story of INGÉ FRANÇOIS — a private luxury boutique based in Stockbridge, GA, serving Henry County and the south metro Atlanta area, curated with intent.",
+  alternates: { canonical: "/the-house" },
 };
 
 export default function TheHousePage() {
@@ -30,7 +32,8 @@ export default function TheHousePage() {
           <p>
             The house opened as a curated boutique — designer shoes, handbags, tailored womenswear, menswear, jewelry,
             and a small edit of home and beauty — sourced with the same restraint a private client would expect from a
-            personal stylist, not a department store.
+            personal stylist, not a department store. Based in Stockbridge, GA, INGÉ serves clients throughout Henry
+            County and the greater south metro Atlanta area, with concierge sourcing available beyond it.
           </p>
           <p>
             What sits alongside the curation is something we&apos;re building slowly and deliberately:{" "}

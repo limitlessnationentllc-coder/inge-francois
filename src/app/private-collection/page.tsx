@@ -8,6 +8,7 @@ const department = getDepartment("private-collection");
 export const metadata: Metadata = {
   title: department.frenchName,
   description: department.description,
+  alternates: { canonical: "/private-collection" },
 };
 
 export default async function Page() {

@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: product.name,
     description: product.story,
+    alternates: { canonical: `/product/${product.handle}` },
   };
 }
 

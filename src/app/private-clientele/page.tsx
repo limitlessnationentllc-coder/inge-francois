@@ -6,6 +6,7 @@ import { WaitlistForm } from "@/components/forms/WaitlistForm";
 export const metadata: Metadata = {
   title: "INGÉ Private Clientele",
   description: "Early access, private drops, sourcing, and styling appointments — apply for access.",
+  alternates: { canonical: "/private-clientele" },
 };
 
 const BENEFITS = [

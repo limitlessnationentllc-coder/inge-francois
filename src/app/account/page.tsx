@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CherryEmblem } from "@/components/cinematic/CherryEmblem";
 
-export const metadata: Metadata = { title: "Account" };
+export const metadata: Metadata = { title: "Account", robots: { index: false, follow: true } };
 
 export default function AccountPage() {
   return (

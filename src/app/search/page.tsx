@@ -3,7 +3,7 @@ import { searchProducts } from "@/lib/shopify";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Reveal } from "@/components/cinematic/Reveal";
 
-export const metadata: Metadata = { title: "Search" };
+export const metadata: Metadata = { title: "Search", robots: { index: false, follow: true } };
 
 interface PageProps {
   searchParams: Promise<{ q?: string }>;

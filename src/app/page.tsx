@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import { getFeaturedProducts } from "@/lib/shopify";
 import { HomeExperience } from "@/components/cinematic/HomeExperience";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function HomePage() {
   const featuredProducts = await getFeaturedProducts(6);

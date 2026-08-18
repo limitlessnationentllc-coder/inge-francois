@@ -8,6 +8,7 @@ const department = getDepartment("originals");
 export const metadata: Metadata = {
   title: department.frenchName,
   description: department.description,
+  alternates: { canonical: "/originals" },
 };
 
 export default async function Page() {
