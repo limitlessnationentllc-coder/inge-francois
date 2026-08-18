@@ -81,6 +81,7 @@ function CinematicHero() {
   const doorRightRef = useRef<HTMLDivElement>(null);
   const finaleRef = useRef<HTMLDivElement>(null);
   const charRefs = useRef<Array<HTMLSpanElement | null>>([]);
+  const introRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     ensureGsapRegistered();
@@ -96,6 +97,14 @@ function CinematicHero() {
           anticipatePin: 1,
         },
       });
+
+      // Arrival card — on-screen the instant the page loads (CSS default,
+      // no JS required), so a visitor never lands on a blank frame while
+      // waiting to scroll. Dissolves the moment scrolling begins.
+      if (introRef.current) {
+        gsap.set(introRef.current, { autoAlpha: 1 });
+        tl.to(introRef.current, { autoAlpha: 0, duration: 0.15, ease: "power1.out" }, 0);
+      }
 
       // Scene 0 — The Drip
       if (dripRef.current) {
@@ -161,6 +170,23 @@ function CinematicHero() {
   return (
     <section ref={containerRef} id="cinematic" className="relative" style={{ height: "700vh" }}>
       <div ref={pinRef} className="relative h-[100svh] w-full overflow-hidden bg-noir-deep">
+        {/* Arrival card — visible by default via plain CSS, so the page
+            never opens on solid black. Fades out via GSAP as soon as the
+            visitor starts scrolling (see introRef tween above). */}
+        <div
+          ref={introRef}
+          className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 gloss-cherry px-6 text-center"
+        >
+          <CherryEmblem variant="gloss" size={96} title="Black cherry, hand glazed" />
+          <p className="font-sans text-xs uppercase tracking-house text-gold-soft">From Cherry to Couture</p>
+          <h1 className="max-w-2xl font-display text-4xl italic leading-[1.1] text-ivory sm:text-6xl">
+            Command the room.
+            <br />
+            Before you say a word.
+          </h1>
+          <span className="mt-6 font-sans text-[11px] uppercase tracking-house text-ivory-dim">Scroll to begin</span>
+        </div>
+
         {/* Scene 0 — The Drip */}
         <svg
           className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
