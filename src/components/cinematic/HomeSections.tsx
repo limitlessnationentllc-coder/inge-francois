@@ -7,25 +7,21 @@ import { CherryEmblem } from "./CherryEmblem";
 import { Reveal } from "./Reveal";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
-/**
- * ACT III — "The House of INGÉ"
- * The visitor moves through the house: an intro statement, the department
- * gallery, featured pieces, and teasers for Private Collection, Concierge,
- * Originals, and the brand story — closing with the private-client
- * invitation. All reveals use the shared `<Reveal>` clip-path primitive,
- * created after Hero.tsx per the ScrollTrigger creation-order law.
- */
-
+/** ACT III — The House of INGÉ */
 export function IntroLine() {
   return (
     <section id="house" className="flex min-h-[70vh] flex-col items-center justify-center gap-6 bg-noir px-6 py-32 text-center">
       <Reveal>
         <CherryEmblem variant="line" size={36} className="mx-auto mb-6 text-gold" />
-        <h2 className="max-w-3xl font-display text-3xl italic leading-snug text-ivory sm:text-5xl">
-          A new expression of modern luxury.
-          <br />
-          Curated. Intentional. Exclusively <span className="wordmark-caps">INGÉ</span>.
-        </h2>
+        <h1 className="max-w-4xl font-display text-3xl italic leading-snug text-ivory sm:text-5xl">
+          Private Luxury Boutique for Pre-Loved Designer Fashion
+        </h1>
+        <p className="mx-auto mt-5 max-w-2xl font-sans text-sm leading-relaxed text-ivory-dim sm:text-base">
+          Discover <span className="wordmark-caps">INGÉ</span> in Stockbridge, Georgia — a curated private luxury boutique serving Henry County and South Metro Atlanta with new, gently used, and pre-loved designer fashion, handbags, shoes, jewelry, professional clothing, and private styling.
+        </p>
+        <p className="mt-4 font-sans text-[11px] uppercase tracking-house text-gold-soft">
+          Stockbridge, GA · Henry County · South Metro Atlanta
+        </p>
       </Reveal>
     </section>
   );
@@ -36,9 +32,7 @@ export function HouseGallery() {
     <section aria-labelledby="house-departments-heading" className="bg-noir px-5 py-24 md:px-10 lg:px-16">
       <Reveal className="mb-12">
         <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">The House</span>
-        <h2 id="house-departments-heading" className="mt-2 font-display text-3xl italic text-ivory sm:text-4xl">
-          Every room, considered.
-        </h2>
+        <h2 id="house-departments-heading" className="mt-2 font-display text-3xl italic text-ivory sm:text-4xl">Every room, considered.</h2>
       </Reveal>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {DEPARTMENTS.map((dept) => (
@@ -64,129 +58,14 @@ export function FeaturedCollections({ products }: { products: Product[] }) {
   if (products.length === 0) return null;
   return (
     <section aria-labelledby="featured-heading" className="bg-charcoal px-5 py-24 md:px-10 lg:px-16">
-      <Reveal className="mb-12 flex items-end justify-between">
-        <div>
-          <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">Featured</span>
-          <h2 id="featured-heading" className="mt-2 font-display text-3xl italic text-ivory sm:text-4xl">
-            Newly Entered the House
-          </h2>
-        </div>
-      </Reveal>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-        {products.map((p) => (
-          <Reveal key={p.id}>
-            <ProductCard product={p} />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal className="mb-12 flex items-end justify-between"><div><span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">Featured</span><h2 id="featured-heading" className="mt-2 font-display text-3xl italic text-ivory sm:text-4xl">Newly Entered the House</h2></div></Reveal>
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">{products.map((p) => (<Reveal key={p.id}><ProductCard product={p} /></Reveal>))}</div>
     </section>
   );
 }
 
-export function PrivateCollectionTeaser() {
-  return (
-    <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-noir-deep px-6 py-28 text-center">
-      <div className="absolute inset-0 gloss-cherry opacity-40" aria-hidden />
-      <Reveal className="relative flex flex-col items-center gap-6">
-        <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">The Private Collection</span>
-        <h2 className="max-w-2xl font-display text-3xl italic text-ivory sm:text-5xl">Not listed. Not repeated.</h2>
-        <p className="max-w-md font-sans text-sm text-ivory-dim">
-          Rare, limited, and privately sourced pieces — available only by request.
-        </p>
-        <Link
-          href="/private-collection"
-          className="mt-2 border border-gold px-8 py-3.5 font-sans text-xs uppercase tracking-house text-gold transition hover:bg-gold hover:text-noir"
-        >
-          View the Collection
-        </Link>
-      </Reveal>
-    </section>
-  );
-}
-
-export function ConciergeTeaser() {
-  return (
-    <section className="grid grid-cols-1 items-center bg-noir md:grid-cols-2">
-      <Reveal className="relative aspect-[4/3] md:aspect-auto md:h-full">
-        <div className="h-full w-full gloss-cherry" aria-hidden />
-      </Reveal>
-      <Reveal className="flex flex-col items-start gap-6 px-8 py-20 md:px-16">
-        <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Concierge</span>
-        <h2 className="font-display text-3xl italic text-ivory sm:text-4xl">Luxury, personally considered.</h2>
-        <p className="max-w-md font-sans text-sm text-ivory-dim">
-          Personal styling, executive wardrobe consultation, designer sourcing, and private appointments — for clients who
-          need more than a storefront.
-        </p>
-        <Link
-          href="/concierge"
-          className="border border-gold px-8 py-3.5 font-sans text-xs uppercase tracking-house text-gold transition hover:bg-gold hover:text-noir"
-        >
-          Speak With Concierge
-        </Link>
-      </Reveal>
-    </section>
-  );
-}
-
-export function OriginalsTeaser() {
-  return (
-    <section className="grid grid-cols-1 items-center bg-charcoal md:grid-cols-2">
-      <Reveal className="order-2 flex flex-col items-start gap-6 px-8 py-20 md:order-1 md:px-16">
-        <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Originals</span>
-        <h2 className="font-display text-3xl italic text-ivory sm:text-4xl">Where the house begins to speak for itself.</h2>
-        <p className="max-w-md font-sans text-sm text-ivory-dim">
-          Proprietary <span className="wordmark-caps">INGÉ</span> designs — the first pieces conceived, not merely curated. A small collection today; the
-          foundation of an original fashion house tomorrow.
-        </p>
-        <Link
-          href="/originals"
-          className="border border-gold px-8 py-3.5 font-sans text-xs uppercase tracking-house text-gold transition hover:bg-gold hover:text-noir"
-        >
-          Discover <span className="wordmark-caps">INGÉ</span> Originals
-        </Link>
-      </Reveal>
-      <Reveal className="relative order-1 aspect-[4/3] md:order-2 md:aspect-auto md:h-full">
-        <PlaceholderPlate seed="originals-teaser" department="originals" alt="INGÉ Originals Founding Collection" className="h-full w-full" />
-      </Reveal>
-    </section>
-  );
-}
-
-export function HouseStoryTeaser() {
-  return (
-    <section className="flex flex-col items-center gap-6 bg-noir px-6 py-28 text-center">
-      <Reveal className="flex flex-col items-center gap-6">
-        <span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">The House</span>
-        <h2 className="max-w-2xl font-display text-3xl italic text-ivory sm:text-4xl">
-          Built like a house. Curated like a wardrobe.
-        </h2>
-        <p className="max-w-lg font-sans text-sm text-ivory-dim">
-          <span className="wordmark-caps">INGÉ</span> FRANÇOIS began as a private boutique — a single point of view on what luxury should feel like for the people
-          who already command a room. What comes next is being built the same way: deliberately.
-        </p>
-        <Link href="/the-house" className="font-sans text-xs uppercase tracking-house text-gold underline underline-offset-8 hover:text-gold-soft">
-          Read the House Story
-        </Link>
-      </Reveal>
-    </section>
-  );
-}
-
-export function PrivateClientInvitation() {
-  return (
-    <section className="flex flex-col items-center gap-8 border-t border-ivory/10 bg-noir-deep px-6 py-28 text-center">
-      <Reveal className="flex flex-col items-center gap-6">
-        <CherryEmblem variant="gloss" size={56} />
-        <span className="wordmark-caps font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Private Clientele</span>
-        <h2 className="max-w-xl font-display text-3xl italic text-ivory sm:text-4xl">Before anyone else.</h2>
-        <p className="max-w-md font-sans text-sm text-ivory-dim">
-          Early access, private drops, sourcing, and styling appointments — reserved for the house&apos;s private clientele.
-        </p>
-        <NewsletterForm />
-        <Link href="/private-clientele" className="font-sans text-xs uppercase tracking-house text-gold underline underline-offset-8 hover:text-gold-soft">
-          Apply for Access
-        </Link>
-      </Reveal>
-    </section>
-  );
-}
+export function PrivateCollectionTeaser() { return <section className="bg-noir px-6 py-28 text-center"><Reveal><span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">Private Collection</span><h2 className="mt-3 font-display text-4xl italic text-ivory">For those who know.</h2><p className="mx-auto mt-4 max-w-xl font-sans text-sm text-ivory-dim">Rare finds, limited pieces, and private access selected for the INGÉ client.</p></Reveal></section>; }
+export function ConciergeTeaser() { return <section className="bg-charcoal px-6 py-28 text-center"><Reveal><span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Concierge</span><h2 className="mt-3 font-display text-4xl italic text-ivory">Private service, personal wardrobe.</h2><p className="mx-auto mt-4 max-w-xl font-sans text-sm text-ivory-dim">Private styling and sourcing for clients in Stockbridge, Henry County, South Metro Atlanta, and beyond.</p><Link href="/concierge" className="mt-7 inline-block border border-gold px-8 py-3 font-sans text-xs uppercase tracking-house text-gold">Request Concierge</Link></Reveal></section>; }
+export function OriginalsTeaser() { return <section className="bg-noir px-6 py-28 text-center"><Reveal><span className="font-sans text-[11px] uppercase tracking-house text-gold-soft">INGÉ Originals</span><h2 className="mt-3 font-display text-4xl italic text-ivory">The house becomes the designer.</h2><p className="mx-auto mt-4 max-w-xl font-sans text-sm text-ivory-dim">Original INGÉ designs are the next chapter of the fashion house.</p></Reveal></section>; }
+export function BrandStoryTeaser() { return <section className="bg-cherry-deep px-6 py-28 text-center"><Reveal><CherryEmblem variant="line" size={40} className="mx-auto mb-5 text-gold" /><h2 className="font-display text-4xl italic text-ivory">Three children. One legacy.</h2><p className="mx-auto mt-4 max-w-xl font-sans text-sm text-ivory-dim">A mother, a vision, and a luxury house rooted in family, style, and purpose.</p></Reveal></section>; }
+export function NewsletterSection() { return <section className="bg-noir px-6 py-24 text-center"><Reveal><h2 className="font-display text-3xl italic text-ivory">Enter the private list.</h2><p className="mx-auto mt-3 max-w-lg font-sans text-sm text-ivory-dim">New arrivals, pre-loved finds, private drops, and house news.</p><div className="mx-auto mt-7 max-w-md"><NewsletterForm /></div></Reveal></section>; }

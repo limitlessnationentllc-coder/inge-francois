@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import type { Product } from "@/types/product";
 import { Hero } from "./Hero";
 import {
+  BrandStoryTeaser,
   ConciergeTeaser,
   FeaturedCollections,
   HouseGallery,
-  HouseStoryTeaser,
   IntroLine,
+  NewsletterSection,
   OriginalsTeaser,
-  PrivateClientInvitation,
   PrivateCollectionTeaser,
 } from "./HomeSections";
 import { markPageReady } from "@/lib/devVerification";
@@ -37,8 +37,8 @@ export function HomeExperience({ featuredProducts }: { featuredProducts: Product
       <PrivateCollectionTeaser />
       <ConciergeTeaser />
       <OriginalsTeaser />
-      <HouseStoryTeaser />
-      <PrivateClientInvitation />
+      <BrandStoryTeaser />
+      <NewsletterSection />
     </>
   );
 }
