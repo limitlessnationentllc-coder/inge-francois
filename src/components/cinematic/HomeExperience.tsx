@@ -16,11 +16,12 @@ import {
 import { markPageReady } from "@/lib/devVerification";
 
 /**
- * Top-level homepage orchestrator. Renders Hero first (creates the pinned
- * Act I/II ScrollTrigger), then Act III's sections (each creates its own
- * ambient reveal ScrollTriggers) — this component's own effect fires last
- * among these siblings/children, which is exactly when it's safe to
- * refresh ScrollTrigger and mark the page ready for verification.
+ * Top-level homepage orchestrator. Renders Hero first (plays its own
+ * autoplay intro sequence, no ScrollTrigger involved), then Act III's
+ * sections (each creates its own ambient reveal ScrollTriggers) — this
+ * component's own effect fires last among these siblings/children, which
+ * is exactly when it's safe to refresh ScrollTrigger and mark the page
+ * ready for verification.
  */
 export function HomeExperience({ featuredProducts }: { featuredProducts: Product[] }) {
   useEffect(() => {

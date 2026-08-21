@@ -71,6 +71,8 @@
 html {
   background: var(--inge-noir);
   scroll-behavior: auto;
+  scrollbar-color: var(--inge-gold) var(--inge-noir);
+  scrollbar-width: thin;
 }
 
 html.lenis {
@@ -91,7 +93,8 @@ body {
   color: var(--inge-ivory);
 }
 
-/* Restrained, on-brand scrollbar (webkit) */
+/* On-brand scrollbar, in gold for real contrast against the noir track
+   (the previous oxblood-on-near-black thumb was nearly invisible). */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -99,9 +102,12 @@ body {
   background: var(--inge-noir);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--inge-cherry-deep);
+  background: var(--inge-gold);
   border: 2px solid var(--inge-noir);
   border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--inge-gold-soft);
 }
 
 .font-display {
